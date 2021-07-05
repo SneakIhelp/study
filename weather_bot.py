@@ -44,7 +44,7 @@ def on_message(update, context):
     chat = update.effective_chat
     text = update.message.text
     try:
-        if text == "Покажи погоду":
+        if text == "Покажи погоду" or "покажи погоду":
             context.bot.send_message(chat_id=chat.id, text=helpme)
             context.bot.send_message(chat_id=chat.id, text=genius)
         else:
