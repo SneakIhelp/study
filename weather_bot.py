@@ -2,32 +2,33 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from pyowm.owm import OWM
 from pyowm.utils.config import get_default_config
 
-config_dict = get_default_config()
-config_dict['language'] = 'ru'
+if __name__ == "__main__":
+    config_dict = get_default_config()
+    config_dict['language'] = 'ru'
 
-owm = OWM('5e53f266fcc1e46be38bb6d8a9a0ab61', config_dict)
-place = 'Москва'
-mgr = owm.weather_manager()
-observation = mgr.weather_at_place(place)
-w = observation.weather
-temp = w.temperature("celsius")
-t = temp['temp']
-t1 = temp['feels_like']
-t2 = temp['temp_max']
-t3 = temp['temp_min']
-t4 = (t3 + t2) / 2
+    owm = OWM('5e53f266fcc1e46be38bb6d8a9a0ab61', config_dict)
+    place = 'Москва'
+    mgr = owm.weather_manager()
+    observation = mgr.weather_at_place(place)
+    w = observation.weather
+    temp = w.temperature("celsius")
+    t = temp['temp']
+    t1 = temp['feels_like']
+    t2 = temp['temp_max']
+    t3 = temp['temp_min']
+    t4 = (t3 + t2) / 2
 
-genius = f'Сейчас в городе {str(place)} температура {str(t)} °C, ощущается как {str(t1)} °C, '
-f'максимальная температура {str(t2)} °C, минимальная температура {str(t3)} °C, средняя температура в этот день ' \
-f'{str(t4)} °C '
+    genius = f'Сейчас в городе {str(place)} температура {str(t)} °C, ощущается как {str(t1)} °C, '\
+             f'максимальная температура {str(t2)} °C, минимальная температура {str(t3)} °C, средняя температура ' \
+             f'сегодня {str(t4)} °C '
 
-try:
-    monitoring = owm.weather_manager().weather_at_place(place)
-    weather = monitoring.weather
-    status = weather.detailed_status
-    helpme = f'Сейчас в городе {str(place)} {str(status)}.'
-except:
-    pass
+    try:
+        monitoring = owm.weather_manager().weather_at_place(place)
+        weather = monitoring.weather
+        status = weather.detailed_status
+        helpme = f'Сейчас в городе {str(place)} {str(status)}.'
+    except:
+        pass
 
 print("Бот запущен. Ctrl + C для закрытия")
 
