@@ -2,7 +2,6 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from pyowm.owm import OWM
 from pyowm.utils.config import get_default_config
 
-
 config_dict = get_default_config()
 config_dict['language'] = 'ru'
 
@@ -18,18 +17,17 @@ t2 = temp['temp_max']
 t3 = temp['temp_min']
 t4 = (t3 + t2) / 2
 
-genius = 'Сейчас в городе ' + str(place) + ' температура ' + str(t) + ' °C, ощущается как ' + str(t1) + '°C, ' \
-         'максимальная тепература ' + str(t2) + \
-         ' °C, минимальная температура ' + str(t3) + ' °C, средняя тепература в этот день ' + \
-         str(t4) + ' °C '
+genius = f'Сейчас в городе {str(place)} температура {str(t)} °C, ощущается как {str(t1)} °C, '
+f'максимальная температура {str(t2)} °C, минимальная температура {str(t3)} °C, средняя температура в этот день ' \
+f'{str(t4)} °C '
+
 try:
     monitoring = owm.weather_manager().weather_at_place(place)
     weather = monitoring.weather
     status = weather.detailed_status
-    helpme = 'Сейчас ' + 'в городе ' + str(place) + ' ' + str(status) + '.'
+    helpme = f'Сейчас в городе {str(place)} {str(status)}.'
 except:
     pass
-
 
 print("Бот запущен. Ctrl + C для закрытия")
 
