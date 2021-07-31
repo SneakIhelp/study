@@ -32,8 +32,8 @@ if __name__ == "__main__":
             t4 = (t3 + t2) / 2
             
             genius = f'Сейчас в городе {str(place)} температура {str(t)} °C, ощущается как {str(t1)} °C, ' \
-                     f'максимальная температура {str(t2)} °C, минимальная температура {str(t3)} °C, средняя температура ' \
-                     f'сегодня {str(t4)} °C '
+                f'максимальная температура {str(t2)} °C, минимальная температура {str(t3)} °C, средняя температура ' \
+                f'сегодня {str(t4)} °C '
 
             monitoring = owm.weather_manager().weather_at_place(place)
             weather = monitoring.weather
