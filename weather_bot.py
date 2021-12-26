@@ -7,13 +7,13 @@ if __name__ == "__main__":
     config_dict = get_default_config()
     config_dict['language'] = 'ru'
 
-    bot = telebot.TeleBot("1872137334:AAEcFaJvabvqiKoch_T-0J75WUcgekQ3UMs")
+    bot = telebot.TeleBot("1872137334:AAHvgCv66qsJ_mTivACz6WosTxCjUvIKTNk")
 
 
     @bot.message_handler(commands=['start', 'help'])
     def welcome(message):
         chat_id = message.chat.id
-        bot.send_message(chat_id, "Привет, я бот отображающий погоду в любом городе, пожалуйста напиши свой город",
+        bot.send_message(chat_id, "Привет, я бот, отображающий погоду в любом городе, пожалуйста, напиши свой город",
                          reply_markup=keyboard())
 
 
