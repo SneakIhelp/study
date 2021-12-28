@@ -9,7 +9,7 @@ while True:
     try:
         print('Bot started')
 
-        def dayOftheWeek(n):
+        def dayOftheWeekFirstgr(n):
             ponedelnikFirstGr = open(r"C:\Users\Admin\git\py\study\schoolbot\ponedelnikFirst.txt", encoding="utf8").read()
             vtornikFirstGr = open(r"C:\Users\Admin\git\py\study\schoolbot\vtornikFirst.txt", encoding="utf8").read()
             sredaFirstGr = open(r"C:\Users\Admin\git\py\study\schoolbot\sredaFirst.txt", encoding="utf8").read()
@@ -35,9 +35,36 @@ while True:
 
 
         current_date = date.today()
-        denNed = dayOftheWeek(current_date.weekday())
+        denNedFirst = dayOftheWeekFirstgr(current_date.weekday())
 
-        
+        def dayOftheWeekSecgr(n):
+            ponedelnikSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\ponedelnikSec.txt", encoding="utf8").read()
+            vtornikSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\vtornikSec.txt", encoding="utf8").read()
+            sredaSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\sredaSec.txt", encoding="utf8").read()
+            chetvSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\chetvSec.txt", encoding="utf8").read()
+            pyatnicaSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\pyatnicaSec.txt", encoding="utf8").read()
+            subbSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\subbotaSec.txt", encoding="utf8").read()
+            voscrSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\voskrSec.txt", encoding="utf8").read()
+
+            if n == 0:
+                return ponedelnikSecGr
+            if n == 1:
+                return vtornikSecGr
+            if n == 2:
+                return sredaSecGr
+            if n == 3:
+                return chetvSecGr
+            if n == 4:
+                return pyatnicaSecGr
+            if n == 5:
+                return subbSecGr
+            if n == 6:
+                return voscrSecGr
+
+
+        current_date = date.today()
+        denNedSec = dayOftheWeekSecgr(current_date.weekday())
+
 
         def keyboard():
             markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True)
@@ -125,6 +152,16 @@ while True:
                                    InlineKeyboardButton("Воскресенье", callback_data="SevenDay_First"),
                                    InlineKeyboardButton("Вернуться назад", callback_data="first_group_raspis"))
 
+            for_ChoosenedSec = InlineKeyboardMarkup(row_width = 1)
+            for_ChoosenedSec.add(InlineKeyboardButton("Понедельник", callback_data="FirstDay_Sec"),
+                                   InlineKeyboardButton("Вторник", callback_data="SecDay_Sec"),
+                                   InlineKeyboardButton("Среда", callback_data="ThirdDay_Sec"),
+                                   InlineKeyboardButton("Четверг", callback_data="FourDay_Sec"),
+                                   InlineKeyboardButton("Пятница", callback_data="FiveDay_Sec"),
+                                   InlineKeyboardButton("Суббота", callback_data="SixDay_Sec"),
+                                   InlineKeyboardButton("Воскресенье", callback_data="SevenDay_Sec"),
+                                   InlineKeyboardButton("Вернуться назад", callback_data="second_group_raspis"))
+
             if call.data == "cb_fiz":
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="Всё что известно по физике:", reply_markup=choose_fiz)
             elif call.data == "cb_matem":
@@ -142,32 +179,53 @@ while True:
             else:
                 if call.data == "raspis":
                     bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="Выбери подгруппу:", reply_markup=choose_raspis_group)
-                elif call.data == "first_group_raspis":
-                    bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="Выберите какое расписание вы хотите получить:", reply_markup=raspis_firstGroup)
                 elif call.data == "second_group_raspis":
                     bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="Выберите какое расписание вы хотите получить:", reply_markup=raspis_secondGroup)
+                elif call.data == "first_group_raspis":
+                    bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="Выберите какое расписание вы хотите получить:", reply_markup=raspis_firstGroup)
                 else:
                     if call.data == "today_first":
-                        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=denNed, reply_markup=raspis_firstGroup)
+                        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=denNedFirst, reply_markup=raspis_firstGroup)
                     elif call.data == "tomorrow_first":
-                        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeek(current_date.weekday() + 1), reply_markup=raspis_firstGroup)
+                        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekFirstgr(current_date.weekday() + 1), reply_markup=raspis_firstGroup)
                     elif call.data == "choose_ned_first":
                         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="Выберите день недели: ", reply_markup=for_ChoosenedFirst)
+                    elif call.data == "choose_ned_sec":
+                        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="Выберите день недели: ", reply_markup=for_ChoosenedSec)
+                    elif call.data == "today_sec":
+                        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=denNedSec, reply_markup=raspis_secondGroup)
+                    elif call.data == "tomorrow_sec":
+                        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekSecgr(current_date.weekday() + 1), reply_markup=raspis_secondGroup)
                     else:
                         if call.data == "FirstDay_First":
-                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeek(0), reply_markup=raspis_firstGroup)
+                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekFirstgr(0), reply_markup=raspis_firstGroup)
                         elif call.data == "SecDay_First":
-                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeek(1), reply_markup=raspis_firstGroup)
+                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekFirstgr(1), reply_markup=raspis_firstGroup)
                         elif call.data == "ThirdDay_First":
-                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeek(2), reply_markup=raspis_firstGroup)
+                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekFirstgr(2), reply_markup=raspis_firstGroup)
                         elif call.data == "FourDay_First":
-                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeek(3), reply_markup=raspis_firstGroup)
+                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekFirstgr(3), reply_markup=raspis_firstGroup)
                         elif call.data == "FiveDay_First":
-                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeek(4), reply_markup=raspis_firstGroup)
+                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekFirstgr(4), reply_markup=raspis_firstGroup)
                         elif call.data == "SixDay_First":
-                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeek(5), reply_markup=raspis_firstGroup)
+                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekFirstgr(5), reply_markup=raspis_firstGroup)
                         elif call.data == "SevenDay_First":
-                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeek(6), reply_markup=raspis_firstGroup)
+                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekFirstgr(6), reply_markup=raspis_firstGroup)
+                        
+                        elif call.data == "FirstDay_Sec":
+                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekSecgr(0), reply_markup=raspis_secondGroup)
+                        elif call.data == "SecDay_Sec":
+                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekSecgr(1), reply_markup=raspis_secondGroup)
+                        elif call.data == "ThirdDay_Sec":
+                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekSecgr(2), reply_markup=raspis_secondGroup)
+                        elif call.data == "FourDay_Sec":
+                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekSecgr(3), reply_markup=raspis_secondGroup)
+                        elif call.data == "FiveDay_Sec":
+                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekSecgr(4), reply_markup=raspis_secondGroup)
+                        elif call.data == "SixDay_Sec":
+                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekSecgr(5), reply_markup=raspis_secondGroup)
+                        elif call.data == "SevenDay_Sec":
+                            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekSecgr(6), reply_markup=raspis_secondGroup)
                 
 
         @bot.message_handler(func=lambda message: True)
