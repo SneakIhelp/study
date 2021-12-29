@@ -1,0 +1,50 @@
+def gane(message):
+            mess = message.text.lower()
+
+            if(mess == '/start'):
+                chat_id = message.chat.id
+                bot.send_message(chat_id, "куку, иди нахуй")
+
+            if mess == 'говно':
+                bot.send_message(message.chat.id, 'залупа')
+            if mess == 'пенис':
+                bot.send_message(message.chat.id, 'хер')
+            if mess == 'давалка':
+                bot.send_message(message.chat.id, 'хуй')
+            if mess == 'блядина':
+                bot.send_message(message.chat.id, 'головка')
+            if mess == 'шлюха':
+                bot.send_message(message.chat.id, 'жопа')
+            if mess == 'член':
+                bot.send_message(message.chat.id, 'еблан')
+            if mess == 'петух':
+                bot.send_message(message.chat.id, 'мудила')
+            if mess == 'рукоблуд':
+                bot.send_message(message.chat.id, 'ссанина')
+            if mess == 'очко':
+                bot.send_message(message.chat.id, 'блядун')
+            if mess == 'вагина':
+                bot.send_message(message.chat.id, 'сука')
+            if mess == 'ебланище':
+                bot.send_message(message.chat.id, 'влагалище')
+            if mess == 'пердун':
+                bot.send_message(message.chat.id, 'дрочила')
+            if mess == 'пидор':
+                bot.send_message(message.chat.id, 'пизда')
+            if mess == 'туз':
+                bot.send_message(message.chat.id, 'малафья')
+            if mess == 'гомик':
+                bot.send_message(message.chat.id, 'мудила')
+            if mess == 'пилотка':
+                bot.send_message(message.chat.id, 'манда')
+            if mess == 'анус':
+                bot.send_message(message.chat.id, 'вагина')
+            if mess == 'путана':
+                bot.send_message(message.chat.id, 'пидрила')
+            if mess == 'шалава':
+                bot.send_message(message.chat.id, 'хуила')
+            if mess == 'мошонка':
+                bot.send_message(message.chat.id, 'елда')
+            if mess == 'раунд!':
+                bot.send_message(message.chat.id, 'пошёл нахуй!')
+    
