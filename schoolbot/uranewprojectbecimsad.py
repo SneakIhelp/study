@@ -240,7 +240,6 @@ while True:
         def mainfunc(message):
             chat_id = message.chat.id   
             mess  = message.text.lower()
-
             
 
         bot.polling(none_stop=True)
