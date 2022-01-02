@@ -196,6 +196,10 @@ while True:
                         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=denNedSec, reply_markup=raspis_secondGroup)
                     elif call.data == "tomorrow_sec":
                         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekSecgr(current_date.weekday() + 1), reply_markup=raspis_secondGroup)
+                    elif call.data == "week_first":
+                        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=open(r"C:\Users\Admin\git\py\study\schoolbot\vsyanedelyaFirst.txt", encoding="utf8").read(), reply_markup=raspis_firstGroup)
+                    elif call.data == "week_sec":
+                        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=open(r"C:\Users\Admin\git\py\study\schoolbot\vsyanedelyaSec.txt", encoding="utf8").read(), reply_markup=raspis_secondGroup)
                     else:
                         if call.data == "FirstDay_First":
                             bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekFirstgr(0), reply_markup=raspis_firstGroup)
