@@ -85,25 +85,6 @@ while True:
             subbFirstGr = open(Path("schoolbot", "raspisFirst","subbotaFirst.txt"), encoding="utf8").read()
             voscrFirstGr = open(Path("schoolbot", "raspisFirst","voskrFirst.txt"), encoding="utf8").read()
 
-<<<<<<< HEAD
-            ponedelnikFirstGr = open(r"C:\Users\Пользователь\Documents\dev\vscode\git\pystudy\study\schoolbot\ponedelnikFirst.txt", encoding="utf8").read()
-            vtornikFirstGr = open(r"C:\Users\Пользователь\Documents\dev\vscode\git\pystudy\study\schoolbot\vtornikFirst.txt", encoding="utf8").read()
-            sredaFirstGr = open(r"C:\Users\Пользователь\Documents\dev\vscode\git\pystudy\study\schoolbot\sredaFirst.txt", encoding="utf8").read()
-            chetvFirstGr = open(r"C:\Users\Пользователь\Documents\dev\vscode\git\pystudy\study\schoolbot\chetvFirst.txt", encoding="utf8").read()
-            pyatnicaFirstGr = open(r"C:\Users\Пользователь\Documents\dev\vscode\git\pystudy\study\schoolbot\pyatnicaFirst.txt", encoding="utf8").read()
-            subbFirstGr = open(r"C:\Users\Пользователь\Documents\dev\vscode\git\pystudy\study\schoolbot\subbotaFirst.txt", encoding="utf8").read()
-            voscrFirstGr = open(r"C:\Users\Пользователь\Documents\dev\vscode\git\pystudy\study\schoolbot\voskrFirst.txt", encoding="utf8").read()
-
-            #ponedelnikFirstGr = open(r"C:\Users\Admin\git\py\study\schoolbot\ponedelnikFirst.txt", encoding="utf8").read()
-            #vtornikFirstGr = open(r"C:\Users\Admin\git\py\study\schoolbot\vtornikFirst.txt", encoding="utf8").read()
-            #sredaFirstGr = open(r"C:\Users\Admin\git\py\study\schoolbot\sredaFirst.txt", encoding="utf8").read()
-            #chetvFirstGr = open(r"C:\Users\Admin\git\py\study\schoolbot\chetvFirst.txt", encoding="utf8").read()
-            #pyatnicaFirstGr = open(r"C:\Users\Admin\git\py\study\schoolbot\pyatnicaFirst.txt", encoding="utf8").read()
-            #subbFirstGr = open(r"C:\Users\Admin\git\py\study\schoolbot\subbotaFirst.txt", encoding="utf8").read()
-            #voscrFirstGr = open(r"C:\Users\Admin\git\py\study\schoolbot\voskrFirst.txt", encoding="utf8").read()
-=======
->>>>>>> c4ccfc8e98caa05791965472f57e97c37ec64a11
-
             if n == 0:
                 return ponedelnikFirstGr
             elif n == 1:
@@ -120,17 +101,8 @@ while True:
                 return voscrFirstGr
             else:
                 return ponedelnikFirstGr
+                
         def dayOftheWeekSecgr(n):
-
-<<<<<<< HEAD
-            #ponedelnikSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\ponedelnikSec.txt", encoding="utf8").read()
-            #vtornikSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\vtornikSec.txt", encoding="utf8").read()
-            #sredaSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\sredaSec.txt", encoding="utf8").read()
-            #chetvSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\chetvSec.txt", encoding="utf8").read()
-            #pyatnicaSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\pyatnicaSec.txt", encoding="utf8").read()
-            #subbSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\subbotaSec.txt", encoding="utf8").read()
-            #voscrSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\voskrSec.txt", encoding="utf8").read()
-=======
             ponedelnikSecGr = open(Path("schoolbot", "raspisSec","ponedelnikSec.txt"), encoding="utf8").read()
             vtornikSecGr = open(Path("schoolbot", "raspisSec","vtornikSec.txt"), encoding="utf8").read()
             sredaSecGr = open(Path("schoolbot", "raspisSec","sredaSec.txt"), encoding="utf8").read()
@@ -138,8 +110,6 @@ while True:
             pyatnicaSecGr = open(Path("schoolbot", "raspisSec","pyatnicaSec.txt"), encoding="utf8").read()
             subbSecGr = open(Path("schoolbot", "raspisSec","subbotaSec.txt"), encoding="utf8").read()
             voscrSecGr = open(Path("schoolbot", "raspisSec","voskrSec.txt"), encoding="utf8").read()
-
->>>>>>> c4ccfc8e98caa05791965472f57e97c37ec64a11
 
             if n == 0:
                 return ponedelnikSecGr
