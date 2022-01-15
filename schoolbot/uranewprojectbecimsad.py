@@ -1,5 +1,6 @@
+from pathlib import Path 
 import telebot
-from datetime import date
+from datetime import date 
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from telebot import types
 from telebot import util
@@ -76,7 +77,15 @@ while True:
                         InlineKeyboardButton("Вернуться назад", callback_data="second_group_raspis"))
 
         def dayOftheWeekFirstgr(n):
+            ponedelnikFirstGr = open(Path("schoolbot", "raspisFirst","ponedelnikFirst.txt"), encoding="utf8").read()
+            vtornikFirstGr = open(Path("schoolbot", "raspisFirst","vtornikFirst.txt"), encoding="utf8").read()
+            sredaFirstGr = open(Path("schoolbot", "raspisFirst","sredaFirst.txt"), encoding="utf8").read()
+            chetvFirstGr = open(Path("schoolbot", "raspisFirst","chetvFirst.txt"), encoding="utf8").read()
+            pyatnicaFirstGr = open(Path("schoolbot", "raspisFirst","pyatnicaFirst.txt"), encoding="utf8").read()
+            subbFirstGr = open(Path("schoolbot", "raspisFirst","subbotaFirst.txt"), encoding="utf8").read()
+            voscrFirstGr = open(Path("schoolbot", "raspisFirst","voskrFirst.txt"), encoding="utf8").read()
 
+<<<<<<< HEAD
             ponedelnikFirstGr = open(r"C:\Users\Пользователь\Documents\dev\vscode\git\pystudy\study\schoolbot\ponedelnikFirst.txt", encoding="utf8").read()
             vtornikFirstGr = open(r"C:\Users\Пользователь\Documents\dev\vscode\git\pystudy\study\schoolbot\vtornikFirst.txt", encoding="utf8").read()
             sredaFirstGr = open(r"C:\Users\Пользователь\Documents\dev\vscode\git\pystudy\study\schoolbot\sredaFirst.txt", encoding="utf8").read()
@@ -92,30 +101,28 @@ while True:
             #pyatnicaFirstGr = open(r"C:\Users\Admin\git\py\study\schoolbot\pyatnicaFirst.txt", encoding="utf8").read()
             #subbFirstGr = open(r"C:\Users\Admin\git\py\study\schoolbot\subbotaFirst.txt", encoding="utf8").read()
             #voscrFirstGr = open(r"C:\Users\Admin\git\py\study\schoolbot\voskrFirst.txt", encoding="utf8").read()
+=======
+>>>>>>> c4ccfc8e98caa05791965472f57e97c37ec64a11
 
             if n == 0:
                 return ponedelnikFirstGr
-            if n == 1:
+            elif n == 1:
                 return vtornikFirstGr
-            if n == 2:
+            elif n == 2:
                 return sredaFirstGr
-            if n == 3:
+            elif n == 3:
                 return chetvFirstGr
-            if n == 4:
+            elif n == 4:
                 return pyatnicaFirstGr
-            if n == 5:
+            elif n == 5:
                 return subbFirstGr
-            if n == 6:
+            elif n == 6:
                 return voscrFirstGr
+            else:
+                return ponedelnikFirstGr
         def dayOftheWeekSecgr(n):
-            ponedelnikSecGr = open(r"C:\Users\Пользователь\Documents\dev\vscode\git\pystudy\study\schoolbot\ponedelnikSec.txt", encoding="utf8").read()
-            vtornikSecGr = open(r"C:\Users\Пользователь\Documents\dev\vscode\git\pystudy\study\schoolbot\vtornikSec.txt", encoding="utf8").read()
-            sredaSecGr = open(r"C:\Users\Пользователь\Documents\dev\vscode\git\pystudy\study\schoolbot\sredaSec.txt", encoding="utf8").read()
-            chetvSecGr = open(r"C:\Users\Пользователь\Documents\dev\vscode\git\pystudy\study\schoolbot\chetvSec.txt", encoding="utf8").read()
-            pyatnicaSecGr = open(r"C:\Users\Пользователь\Documents\dev\vscode\git\pystudy\study\schoolbot\pyatnicaSec.txt", encoding="utf8").read()
-            subbSecGr = open(r"C:\Users\Пользователь\Documents\dev\vscode\git\pystudy\study\schoolbot\subbotaSec.txt", encoding="utf8").read()
-            voscrSecGr = open(r"C:\Users\Пользователь\Documents\dev\vscode\git\pystudy\study\schoolbot\voskrSec.txt", encoding="utf8").read()
 
+<<<<<<< HEAD
             #ponedelnikSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\ponedelnikSec.txt", encoding="utf8").read()
             #vtornikSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\vtornikSec.txt", encoding="utf8").read()
             #sredaSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\sredaSec.txt", encoding="utf8").read()
@@ -123,21 +130,34 @@ while True:
             #pyatnicaSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\pyatnicaSec.txt", encoding="utf8").read()
             #subbSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\subbotaSec.txt", encoding="utf8").read()
             #voscrSecGr = open(r"C:\Users\Admin\git\py\study\schoolbot\voskrSec.txt", encoding="utf8").read()
+=======
+            ponedelnikSecGr = open(Path("schoolbot", "raspisSec","ponedelnikSec.txt"), encoding="utf8").read()
+            vtornikSecGr = open(Path("schoolbot", "raspisSec","vtornikSec.txt"), encoding="utf8").read()
+            sredaSecGr = open(Path("schoolbot", "raspisSec","sredaSec.txt"), encoding="utf8").read()
+            chetvSecGr = open(Path("schoolbot", "raspisSec","chetvSec.txt"), encoding="utf8").read()
+            pyatnicaSecGr = open(Path("schoolbot", "raspisSec","pyatnicaSec.txt"), encoding="utf8").read()
+            subbSecGr = open(Path("schoolbot", "raspisSec","subbotaSec.txt"), encoding="utf8").read()
+            voscrSecGr = open(Path("schoolbot", "raspisSec","voskrSec.txt"), encoding="utf8").read()
+
+>>>>>>> c4ccfc8e98caa05791965472f57e97c37ec64a11
 
             if n == 0:
                 return ponedelnikSecGr
-            if n == 1:
+            elif n == 1:
                 return vtornikSecGr
-            if n == 2:
+            elif n == 2:
                 return sredaSecGr
-            if n == 3:
+            elif n == 3:
                 return chetvSecGr
-            if n == 4:
+            elif n == 4:
                 return pyatnicaSecGr
-            if n == 5:
+            elif n == 5:
                 return subbSecGr
-            if n == 6:
+            elif n == 6:
                 return voscrSecGr
+            else:
+                return ponedelnikSecGr
+            
         def usable_keyb():
                 markup = InlineKeyboardMarkup()
                 markup.row_width = 4
@@ -201,6 +221,10 @@ while True:
                         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=denNedSec, reply_markup=raspis_secondGroup)
                     elif call.data == "tomorrow_sec":
                         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekSecgr(current_date.weekday() + 1), reply_markup=raspis_secondGroup)
+                    elif call.data == "week_first":
+                        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=open(Path("schoolbot", "raspisFirst","vsyanedelyaFirst.txt"), encoding="utf8").read(), reply_markup=raspis_firstGroup)
+                    elif call.data == "week_sec":
+                        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=open(Path("schoolbot", "raspisSec","vsyanedelyaSec.txt"), encoding="utf8").read(), reply_markup=raspis_secondGroup)
                     else:
                         if call.data == "FirstDay_First":
                             bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=dayOftheWeekFirstgr(0), reply_markup=raspis_firstGroup)
