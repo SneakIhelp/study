@@ -86,7 +86,6 @@ while True:
             subbFirstGr = open(Path("schoolbot", "raspisFirst","subbotaFirst.txt"), encoding="utf8").read()
             voscrFirstGr = open(Path("schoolbot", "raspisFirst","voskrFirst.txt"), encoding="utf8").read()
 
-
             if n == 0:
                 return ponedelnikFirstGr
             elif n == 1:
@@ -103,8 +102,8 @@ while True:
                 return voscrFirstGr
             else:
                 return ponedelnikFirstGr
+                
         def dayOftheWeekSecgr(n):
-
             ponedelnikSecGr = open(Path("schoolbot", "raspisSec","ponedelnikSec.txt"), encoding="utf8").read()
             vtornikSecGr = open(Path("schoolbot", "raspisSec","vtornikSec.txt"), encoding="utf8").read()
             sredaSecGr = open(Path("schoolbot", "raspisSec","sredaSec.txt"), encoding="utf8").read()
@@ -112,7 +111,6 @@ while True:
             pyatnicaSecGr = open(Path("schoolbot", "raspisSec","pyatnicaSec.txt"), encoding="utf8").read()
             subbSecGr = open(Path("schoolbot", "raspisSec","subbotaSec.txt"), encoding="utf8").read()
             voscrSecGr = open(Path("schoolbot", "raspisSec","voskrSec.txt"), encoding="utf8").read()
-
 
             if n == 0:
                 return ponedelnikSecGr
