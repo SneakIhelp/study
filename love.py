@@ -8,10 +8,11 @@ pen.color('red')
 bgcolor('black')
 
 
-def curve():
+def curve(cc):
     for i in range(200):
-        pen.right(1)
-        pen.forward(1)
+        pen.right(cc)
+        pen.forward(cc)
+        
 
 
 def draw_biggest_heart():
@@ -24,7 +25,6 @@ def draw_biggest_heart():
     curve()
     pen.forward(112)
     pen.end_fill()
-
 
 font = ("Monteserrat", 16, "bold")
 
@@ -48,7 +48,8 @@ async def send_message_to_telegram():
 
     client = TelegramClient('session_name', api_id, api_hash)
     await client.start()
-    await client.send_message("@gorkaork", message="Hi")
+    await client.send_message("@gorkaork", message="4")
+
 
 
 asyncio.run(send_message_to_telegram())
