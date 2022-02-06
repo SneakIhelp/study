@@ -1,6 +1,7 @@
 import time
+import asyncio
 from turtle import *
-import telethon
+from telethon import *
 
 pen = Turtle()
 pen.color('red')
@@ -13,7 +14,7 @@ def curve():
         pen.forward(1)
 
 
-def draw_heart():
+def draw_biggest_heart():
     pen.fillcolor('red')
     pen.begin_fill()
     pen.left(140)
@@ -41,18 +42,17 @@ def text():
     pen.write("И хочу спать", font=font)
 
 
-def send_message_to_telegram():
+async def send_message_to_telegram():
     api_id = 6956069
     api_hash = 'e846851c160ab65697bb39404f40ae1c'
 
-    client = telethon.TelegramClient('session_name', api_id, api_hash)
-    client.start()
+    client = TelegramClient('session_name', api_id, api_hash)
+    await client.start()
+    await client.send_message("@gorkaork", message="Hi")
 
-    
 
-
+asyncio.run(send_message_to_telegram())
 pen.ht()
-draw_heart()
+draw_biggest_heart()
 text()
-send_message_to_telegram()
 done()
