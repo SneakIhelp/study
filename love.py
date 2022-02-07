@@ -8,7 +8,7 @@ pen.color('red')
 bgcolor('black')
 
 
-def curve(cc):
+def curve(cc, coo):
     for i in range(200):
         pen.right(cc)
         pen.forward(cc)
@@ -16,17 +16,20 @@ def curve(cc):
 
 
 def draw_biggest_heart():
+    сс = 1
+    coo = 200
     pen.fillcolor('red')
     pen.begin_fill()
     pen.left(140)
     pen.forward(113)
-    curve()
+    curve(сс, coo)
     pen.left(120)
-    curve()
+    curve(сс, coo)
     pen.forward(112)
     pen.end_fill()
 
 font = ("Monteserrat", 16, "bold")
+
 
 
 def text():
