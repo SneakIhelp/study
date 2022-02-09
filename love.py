@@ -59,8 +59,5 @@ asyncio.run(send_message_to_telegram())
 pen.ht()
 draw_biggest_heart()
 text()
-<<<<<<< HEAD
 done()
-=======
-done()
->>>>>>> e0b74408a1399fe262071232c2a6615231c63c42
+
