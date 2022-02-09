@@ -2,13 +2,14 @@ from pathlib import Path
 import telebot
 from datetime import date 
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
-from telebot import types
-from telebot import util
+import os 
+import sys
 import time
 
 while True:
     try:
         print('Bot started')
+        print(os.path.dirname(sys.executable))
         bot = telebot.TeleBot("5072410027:AAHoVWbuE0bhAunjTsRmc9E50_qFZl47Ymg")
         # the next condition is to hide the inline keyboards
         if True:
