@@ -80,4 +80,5 @@ time.sleep(10)
 clearscreen()
 draw_heart()
 done()
-asyncio.run(send_message_to_telegram())
+
+asyncio.run(send_message_to_telegram()
