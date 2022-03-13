@@ -1,48 +1,65 @@
 import time
+import math
 import asyncio
 from turtle import *
 from telethon import *
 
 pen = Turtle()
+pen.speed(200)
 pen.color('red')
 bgcolor('black')
 
 
-def curve(cc, coo):
+def curve():
     for i in range(200):
-        pen.right(cc)
-        pen.forward(cc)
-        
+        pen.right(1)
+        pen.forward(1)
 
 
-def draw_biggest_heart():
-    сс = 1
-    coo = 200
+def draw_sr_heart():
     pen.fillcolor('red')
     pen.begin_fill()
     pen.left(140)
     pen.forward(113)
-    curve(сс, coo)
+    curve()
     pen.left(120)
-    curve(сс, coo)
+    curve()
     pen.forward(112)
     pen.end_fill()
+
+
+def xt(t):
+    return 16 * math.sin(t) ** 3
+
+def yt(t):
+    return 13 * math.cos(t) - 5 * \
+        math.cos(2 * t) - 2 * \
+        math.cos(3 * t) - \
+        math.cos(4 * t)
+
+def draw_heart():
+    t = Turtle()
+    t.speed(5000)
+    colormode(255)
+    Screen().bgcolor(0, 0, 0)
+    for i in range(510):
+        t.goto((xt(i) * 20, yt(i) * 20))
+        t.pencolor((255 - i) % 255, i % 255, (255 + i) // 2 % 255)
+        t.goto(0, 0)
+    
+    update()
+    mainloop()
+
 
 font = ("Monteserrat", 16, "bold")
 
 
-
 def text():
     pen.up()
-    pen.setpos(-72, 90)
+    pen.setpos(-52, 90)
     pen.down()
     pen.color('black')
-    pen.write("Я люблю тебя!", font=font)
-    pen.up()
-    pen.setpos(-63, 70)
-    pen.down()
-    time.sleep(1)
-    pen.write("И хочу спать", font=font)
+    pen.write("Ты котик!!", font=font)
 
 
 async def send_message_to_telegram():
@@ -51,12 +68,16 @@ async def send_message_to_telegram():
 
     client = TelegramClient('session_name', api_id, api_hash)
     await client.start()
-    await client.send_message("@gorkaork", message="4")
+    for i in range(200):
+        await client.send_message("me", message="я тебя очень очень сильно люблю!")
 
 
 
-asyncio.run(send_message_to_telegram())
 pen.ht()
-draw_biggest_heart()
+draw_sr_heart()
 text()
+time.sleep(10)
+clearscreen()
+draw_heart()
 done()
+asyncio.run(send_message_to_telegram())
