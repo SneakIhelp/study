@@ -78,13 +78,13 @@ while True:
                         InlineKeyboardButton("Вернуться назад", callback_data="second_group_raspis"))
 
         def dayOftheWeekFirstgr(n):
-            ponedelnikFirstGr = open(Path("schoolbot", "raspisFirst","ponedelnikFirst.txt"), encoding="utf8").read()
-            vtornikFirstGr = open(Path("schoolbot", "raspisFirst","vtornikFirst.txt"), encoding="utf8").read()
-            sredaFirstGr = open(Path("schoolbot", "raspisFirst","sredaFirst.txt"), encoding="utf8").read()
-            chetvFirstGr = open(Path("schoolbot", "raspisFirst","chetvFirst.txt"), encoding="utf8").read()
-            pyatnicaFirstGr = open(Path("schoolbot", "raspisFirst","pyatnicaFirst.txt"), encoding="utf8").read()
-            subbFirstGr = open(Path("schoolbot", "raspisFirst","subbotaFirst.txt"), encoding="utf8").read()
-            voscrFirstGr = open(Path("schoolbot", "raspisFirst","voskrFirst.txt"), encoding="utf8").read()
+            ponedelnikFirstGr = open(Path("delete_pls_you're_stupid", "raspisFirst","ponedelnikFirst.txt"), encoding="utf8").read()
+            vtornikFirstGr = open(Path("delete_pls_you're_stupid", "raspisFirst","vtornikFirst.txt"), encoding="utf8").read()
+            sredaFirstGr = open(Path("delete_pls_you're_stupid", "raspisFirst","sredaFirst.txt"), encoding="utf8").read()
+            chetvFirstGr = open(Path("delete_pls_you're_stupid", "raspisFirst","chetvFirst.txt"), encoding="utf8").read()
+            pyatnicaFirstGr = open(Path("delete_pls_you're_stupid", "raspisFirst","pyatnicaFirst.txt"), encoding="utf8").read()
+            subbFirstGr = open(Path("delete_pls_you're_stupid", "raspisFirst","subbotaFirst.txt"), encoding="utf8").read()
+            voscrFirstGr = open(Path("delete_pls_you're_stupid", "raspisFirst","voskrFirst.txt"), encoding="utf8").read()
 
             if n == 0:
                 return ponedelnikFirstGr
@@ -104,13 +104,13 @@ while True:
                 return ponedelnikFirstGr
                 
         def dayOftheWeekSecgr(n):
-            ponedelnikSecGr = open(Path("schoolbot", "raspisSec","ponedelnikSec.txt"), encoding="utf8").read()
-            vtornikSecGr = open(Path("schoolbot", "raspisSec","vtornikSec.txt"), encoding="utf8").read()
-            sredaSecGr = open(Path("schoolbot", "raspisSec","sredaSec.txt"), encoding="utf8").read()
-            chetvSecGr = open(Path("schoolbot", "raspisSec","chetvSec.txt"), encoding="utf8").read()
-            pyatnicaSecGr = open(Path("schoolbot", "raspisSec","pyatnicaSec.txt"), encoding="utf8").read()
-            subbSecGr = open(Path("schoolbot", "raspisSec","subbotaSec.txt"), encoding="utf8").read()
-            voscrSecGr = open(Path("schoolbot", "raspisSec","voskrSec.txt"), encoding="utf8").read()
+            ponedelnikSecGr = open(Path("delete_pls_you're_stupid", "raspisSec","ponedelnikSec.txt"), encoding="utf8").read()
+            vtornikSecGr = open(Path("delete_pls_you're_stupid", "raspisSec","vtornikSec.txt"), encoding="utf8").read()
+            sredaSecGr = open(Path("delete_pls_you're_stupid", "raspisSec","sredaSec.txt"), encoding="utf8").read()
+            chetvSecGr = open(Path("delete_pls_you're_stupid", "raspisSec","chetvSec.txt"), encoding="utf8").read()
+            pyatnicaSecGr = open(Path("delete_pls_you're_stupid", "raspisSec","pyatnicaSec.txt"), encoding="utf8").read()
+            subbSecGr = open(Path("delete_pls_you're_stupid", "raspisSec","subbotaSec.txt"), encoding="utf8").read()
+            voscrSecGr = open(Path("delete_pls_you're_stupid", "raspisSec","voskrSec.txt"), encoding="utf8").read()
 
             if n == 0:
                 return ponedelnikSecGr
@@ -158,6 +158,11 @@ while True:
 
         @bot.callback_query_handler(func=lambda call: True)
         def callback_query(call):
+
+            current_date = date.today()
+            denNedSec = dayOftheWeekSecgr(current_date.weekday())
+            denNedFirst = dayOftheWeekFirstgr(current_date.weekday())
+
             if call.data == "cb_fiz":
                 bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="Всё что известно по физике:", reply_markup=choose_fiz)
             elif call.data == "cb_matem":
