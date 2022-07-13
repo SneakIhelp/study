@@ -1,8 +1,32 @@
 import time
+from telethon.errors import SessionPasswordNeededError
 import math
 import asyncio
 from turtle import *
 from telethon import *
+
+api_id = 6956069
+api_hash = 'e846851c160ab65697bb39404f40ae1c'
+phone = '89686332011'
+username = 'itnorks'
+
+async def send_message_to_telegram():
+    async with TelegramClient('birthday_release', api_id, api_hash) as client:
+        if not client.is_user_authorized(): 
+            client.send_code_request(phone)
+            try:
+                client.sign_in(phone, input('Enter the code: '))
+            except SessionPasswordNeededError:
+                client.sign_in(password=input('Password: '))
+
+        await client.start()
+        for i in range(100):
+            await client.send_message("me", message="я тебя очень очень сильно люблю!")
+
+
+asyncio.run(send_message_to_telegram())
+
+time.sleep(5)
 
 pen = Turtle()
 pen.speed(200)
@@ -59,19 +83,7 @@ def text():
     pen.setpos(-52, 90)
     pen.down()
     pen.color('black')
-    pen.write("Ты котик!!", font=font)
-
-
-async def send_message_to_telegram():
-    api_id = 6956069
-    api_hash = 'e846851c160ab65697bb39404f40ae1c'
-
-    client = TelegramClient('session_name', api_id, api_hash)
-    await client.start()
-    for i in range(200):
-        await client.send_message("me", message="я тебя очень очень сильно люблю!")
-
-
+    pen.write("Ты зайка!!", font=font)
 
 pen.ht()
 draw_sr_heart()
@@ -81,4 +93,3 @@ clearscreen()
 draw_heart()
 done()
 
-asyncio.run(send_message_to_telegram())
