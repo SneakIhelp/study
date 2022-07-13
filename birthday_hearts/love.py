@@ -21,7 +21,7 @@ async def send_message_to_telegram():
 
         await client.start()
         for i in range(100):
-            await client.send_message("me", message="я тебя очень очень сильно люблю!")
+            await client.send_message("go_to_the_nafig_pls", message="я тебя очень очень сильно люблю!")
 
 
 asyncio.run(send_message_to_telegram())
